@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "767882606610",
+    "project_id": "authfirebaseapp-8007d",
+    "storage_bucket": "authfirebaseapp-8007d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767882606610:android:0db77377595ec9e32c80cb",
+        "android_client_info": {
+          "package_name": "com.cholan.authfirebaseapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnYvqgpdp4RHlXTqwbbl4Si37R-j7fcNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

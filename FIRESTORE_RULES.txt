@@ -1,0 +1,30 @@
+REGLAS DE FIRESTORE PARA LA APLICACIÓN
+=====================================
+
+Debes configurar estas reglas en Firebase Console > Firestore Database > Rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Permitir que los usuarios autenticados creen, lean, actualicen y eliminen sus propios cursos
+    match /cursos/{document=**} {
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow update: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow delete: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+  }
+}
+
+PASOS PARA CONFIGURAR:
+1. Ve a Firebase Console (https://console.firebase.google.com)
+2. Selecciona tu proyecto "authfirebaseapp-8007d"
+3. Ve a Firestore Database
+4. Haz clic en "Rules"
+5. Reemplaza el contenido con las reglas de arriba
+6. Haz clic en "Publish"
+
+IMPORTANTE:
+- Las reglas aseguran que cada usuario solo pueda ver/editar sus propios cursos
+- El campo "userId" en cada documento debe coincidir con el UID del usuario autenticado
+- Sin estas reglas, la aplicación no podrá guardar datos en Firestore
